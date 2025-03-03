@@ -16,11 +16,8 @@ jobs:
     - name: install m68k-xelf
       run: |
         curl -OL https://github.com/yunkya2/elf2x68k/releases/download/20240929/elf2x68k-Linux-20240929.tar.bz2
-        ls -lh elf2x68k-Linux-20240929.tar.bz2
         tar -jxf elf2x68k-Linux-20240929.tar.bz2
-        ls -al
         extracted_dir=$(find . -maxdepth 1 -type d ! -name ".*" | head -n 1)
-        echo $EXTRACTED_DIR
         echo "EXTRACTED_DIR=$PWD/$extracted_dir" >> $GITHUB_ENV
         echo "$PWD/$extracted_dir/bin" >> $GITHUB_PATH
         chmod +x $PWD/$extracted_dir/bin/*
