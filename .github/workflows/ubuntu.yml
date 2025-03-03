@@ -16,6 +16,7 @@ jobs:
     - name: install m68k-xelf
       run: |
         curl -OL https://github.com/yunkya2/elf2x68k/releases/download/20240929/elf2x68k-Linux-20240929.tar.bz2
+        sudo apt-get update && sudo apt-get install -y bzip2
         tar -jxf elf2x68k-Linux-20240929.tar.bz2
         ls -al
         extracted_dir=$(find . -maxdepth 1 -type d | grep -v "^\.$" | head -n 1)
